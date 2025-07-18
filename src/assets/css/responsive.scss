@@ -1,0 +1,14 @@
+// Responsive
+
+.sm-hide {
+  display: none;
+  @media only screen and (min-width: 769px) {
+    display: inherit;
+  }
+}
+.sm-show {
+  display: none;
+  @media only screen and (max-width: 768px) {
+    display: inherit;
+  }
+}

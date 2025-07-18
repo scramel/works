@@ -1,0 +1,18 @@
+.black-box {
+  background-color: black;
+	padding: 8px;
+	height: 80px;
+	width: 80px;
+	border: none;
+	font-size: 30px;
+	transition: var(--global-transition-fast);
+	// fixes a few graphical issues
+	min-height: 80px;
+  min-width: 80px;
+	&:hover {
+		filter: invert(1);
+	}
+	&:active {
+		filter: invert(0);
+	}
+}

@@ -1,0 +1,21 @@
+// Utilities
+
+.f-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+  transition: var(--global-transition-fast);
+  &:hover {
+    filter: contrast(.7);
+  }
+  &:active {
+    filter: contrast(1);
+  }
+}
