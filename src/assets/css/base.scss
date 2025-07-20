@@ -22,15 +22,15 @@
   --vt-c-text-dark-2: rgb(255, 255, 255);
 
   --global-transition: .2s;
-  --global-transition-fast: .15s;
-  --global-transition-carousel: .75s;
+  --global-transition-fast: .1s;
+  --global-transition-carousel: .8s;
 
   --global-heading-height: 80px;
   --global-section-padding: 3rem;
 
-  --global-ui-zindex: 2;
-  --global-content-zindex: 1;
-  --global-background-zindex: 0;
+  --global-ui-zindex: 1;
+  --global-content-zindex: 0;
+  --global-background-zindex: -1;
 
   @media only screen and (max-width: 768px) {
     --global-section-padding: 1.5rem;

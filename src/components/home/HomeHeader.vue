@@ -1,14 +1,18 @@
 <template>
 	<header>
-		<Carousel :index="trackindex" :srcs="srcs"/>
-		<h1>Header section!</h1>
+		<Carousel :currentTrack="currentTrack" :srcs="srcs"/>
+		<Releases :currentTrack="currentTrack" :tracks="tracklist"/>
 	</header>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import Carousel from '@/components/home/HomeCarousel.vue';
+import { require } from '@/assets/js/utils.js';
 import releases from './releases.js';
+
+// components
+import Carousel from '@/components/home/HomeCarousel.vue';
+import Releases from '@/components/home/HomeReleases.vue';
 
 // tracklist
 const tracklist = [
@@ -18,15 +22,21 @@ const tracklist = [
 ];
 
 // current track
-const trackindex = ref(0);
+const currentTrack = ref(0);
 
 // carousel loop
-const delay = 5250; // miliseconds
+const delay = 50250; // miliseconds
 const timer = setInterval(() => {
-	trackindex.value++;
-	if (trackindex.value == tracklist.length) trackindex.value = 0;
+	currentTrack.value++;
+	if (currentTrack.value == tracklist.length) currentTrack.value = 0;
 }, delay);
 
 // image sources
-const srcs = tracklist.map(el => new URL(`/src/assets/images/backgrounds/${el.title}.webp`, import.meta.url));
+const srcs = tracklist.map(el => require(`images/backgrounds/${el.title}.webp`));
 </script>
+
+<style lang="scss" scoped>
+header {
+	overflow: hidden;
+}
+</style>
