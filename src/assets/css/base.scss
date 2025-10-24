@@ -21,13 +21,16 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgb(255, 255, 255);
 
-  --global-transition: .2s;
-  --global-transition-fast: .1s;
-  --global-transition-carousel: .8s;
+  // transition durations
+  --global-transition: 0.2s;
+  --global-transition-fast: 0.15s;
+  --global-transition-carousel: 0.8s;
 
+  // general purpose UI settings
   --global-heading-height: 80px;
   --global-section-padding: 3rem;
 
+  // z-indexes
   --global-ui-zindex: 1;
   --global-content-zindex: 0;
   --global-background-zindex: -1;
@@ -96,7 +99,8 @@ body {
   flex-direction: column;
 }
 
-header, section {
+header,
+section {
   min-height: 100vh;
   min-width: 100vw;
 }

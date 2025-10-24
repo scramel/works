@@ -13,7 +13,7 @@
   cursor: pointer;
   transition: var(--global-transition-fast);
   &:hover {
-    filter: contrast(.7);
+    filter: contrast(0.7);
   }
   &:active {
     filter: contrast(1);

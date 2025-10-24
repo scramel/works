@@ -1,27 +1,30 @@
 <template>
-  <TransitionGroup name="slide-fade" tag="article">
+  <TransitionGroup name="slide-fade-next" tag="article">
     <template v-for="(track, index) in tracks" :key="track.title">
       <div v-if="currentTrack == index">
         <h1>{{ track.tag }}</h1>
-        <img :src="require(`images/covers/${track.title}.webp`)" :alt="`${track.title} cover art`">
+        <img
+          :src="require(`images/covers/${track.title}.webp`)"
+          :alt="`${track.title} cover art`"
+        />
       </div>
     </template>
   </TransitionGroup>
 </template>
 
 <script setup>
-import { require } from '@/assets/js/utils.js';
+import { require } from '@/assets/js/utils.js'
 
 const props = defineProps({
   tracks: {
     type: Array,
-    required: true
+    required: true,
   },
   currentTrack: {
     type: Number,
-    default: 0
+    default: 0,
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>
