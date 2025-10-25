@@ -16,4 +16,6 @@ export default defineConfig({
     host: '0.0.0.0', // Bind to all network interfaces
     port: 8000,
   },
+  base: '/works/', // Deployment path
+  publicPath: '/works/', // Deployment path
 })

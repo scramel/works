@@ -4,7 +4,7 @@
       <h1 class="text text--tag">{{ tracks[currentTrack].tag }}</h1>
       <article class="f-row">
         <img
-          class="normalize-padding"
+          class="cover-art normalize-padding"
           :src="require(`images/covers/${tracks[currentTrack].title}.webp`)"
           :alt="`${tracks[currentTrack].title} cover art`"
         />
@@ -12,6 +12,23 @@
           <h1 class="text text--title">{{ tracks[currentTrack].title }}</h1>
           <h2 class="text">{{ tracks[currentTrack].artist }}</h2>
           <h3 class="text">{{ tracks[currentTrack].subtitle }}</h3>
+          <div class="mt-1-5 f-row">
+            <a :href="tracks[currentTrack].url" target="_blank">
+              <button class="button button--secondary">
+                <h3>▶ Listen</h3>
+              </button>
+            </a>
+            <div class="f-row f-row--wrap">
+              <a
+                v-for="platform in tracks[currentTrack].platforms"
+                :href="platform.url"
+                class="platform-icon"
+                target="_blank"
+              >
+                <img :src="require(`images/logos/${platform.name}.webp`)" :alt="platform.name" />
+              </a>
+            </div>
+          </div>
         </aside>
       </article>
       <!-- <div></div> -->
@@ -61,13 +78,14 @@ watch(
     flex: 1;
     gap: 0;
     aside {
+      min-width: 42vw;
       padding-right: var(--global-section-padding);
     }
   }
   .text {
     width: fit-content;
-    padding: 0 40px;
     transition: var(--global-transition);
+    padding-left: 40px;
     &--tag {
       padding: 0 60px;
       line-height: var(--global-heading-height);
@@ -78,15 +96,17 @@ watch(
       z-index: var(--global-ui-zindex);
     }
     &--title {
+      padding: 0 40px;
       background-color: white;
       color: black;
       text-align: center;
+      font-weight: bold;
     }
-    @media only screen and (max-width: 768px) {
-      padding: 0 20px;
+    @media only screen and (max-width: 1200px) {
+      padding: 0 40px;
     }
   }
-  img {
+  .cover-art {
     transition: var(--global-transition) padding;
     padding: var(--global-section-padding);
     height: min(
@@ -96,6 +116,14 @@ watch(
           2 - var(--global-heading-height) * 2
       )
     );
+  }
+  .platform-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 40px;
+    }
   }
 }
 </style>

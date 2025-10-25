@@ -122,6 +122,28 @@ section {
 button {
   cursor: pointer;
 }
+.button {
+  width: fit-content;
+  padding: 0.5rem 2.5rem;
+  border: solid 2px;
+  transition: var(--global-transition);
+  * {
+    font-family: BubblerOne;
+  }
+  &--secondary {
+    background: transparent;
+    &:active {
+      border: 2px solid white;
+      background: white;
+      * {
+        color: black;
+      }
+    }
+  }
+  &:hover {
+    padding: 0.5rem 3.5rem;
+  }
+}
 
 // font sizes
 h1 {

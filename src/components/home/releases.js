@@ -1,6 +1,30 @@
 const releases = {
   latest: [
     {
+      title: 'Dear Miku',
+      artist: 'Scramel',
+      subtitle: '(dai - you DnB Rock Remix)',
+      url: 'https://www.youtube.com/watch?v=ESupPT1aCR4',
+      platforms: [
+        {
+          name: 'YouTube',
+          url: 'https://www.youtube.com/watch?v=ESupPT1aCR4',
+        },
+        {
+          name: 'SoundCloud',
+          url: 'https://soundcloud.com/scramel/dear-miku',
+        },
+        {
+          name: 'Bandcamp',
+          url: 'https://scramel.bandcamp.com/album/dear-miku',
+        },
+      ],
+      illustration: {
+        artist: 'Natsumi Kei',
+        url: 'https://twitter.com/sirius1810405',
+      },
+    },
+    {
       title: 'the executioner',
       artist: 'zts',
       subtitle: '(Metal Remix)',
@@ -22,34 +46,6 @@ const releases = {
       illustration: {
         artist: 'Natsumi Kei',
         url: 'https://twitter.com/sirius1810405',
-      },
-    },
-    {
-      title: 'シューニャの空',
-      artist: 'xaki',
-      subtitle: '(Trance Remix)',
-      url: 'https://www.youtube.com/watch?v=5Rk-lYnlmVA',
-      platforms: [
-        {
-          name: 'Website',
-          url: 'https://fragmentsofgratitude.tumblr.com',
-        },
-        {
-          name: 'YouTube',
-          url: 'https://www.youtube.com/watch?v=5Rk-lYnlmVA',
-        },
-        {
-          name: 'SoundCloud',
-          url: 'https://soundcloud.com/scramel/sunya-no-sora',
-        },
-        {
-          name: 'Bandcamp',
-          url: 'https://kodamasounds.bandcamp.com/track/nya-no-sora-emptinesss-sky',
-        },
-      ],
-      illustration: {
-        artist: 'KUYA',
-        url: 'https://twitter.com/hey36253625',
       },
     },
   ],
