@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home__carousel">
     <img
       v-for="(src, index) in srcs"
       :src="src"
@@ -10,8 +10,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-
 const props = defineProps({
   currentTrack: {
     type: Number,
@@ -25,11 +23,12 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-div {
+.home__carousel {
   display: flex;
-  height: 100vh;
   width: 100vw;
   position: absolute;
+  bottom: 0;
+  top: 0;
   z-index: var(--global-background-zindex);
   overflow: hidden;
   filter: brightness(0.5);

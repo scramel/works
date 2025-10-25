@@ -1,26 +1,68 @@
+// responsive variables
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+
 // Responsive
+
+.f-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: calc($lg - 1px)) {
+    flex-direction: column;
+  }
+}
+
+.f-col {
+  display: flex;
+  flex-direction: column;
+  @media only screen and (max-width: calc($lg - 1px)) {
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .sm-hide {
   display: none;
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: $sm) {
     display: inherit;
   }
 }
 .sm-show {
-  display: none;
-  @media only screen and (max-width: 768px) {
-    display: inherit;
+  display: inherit;
+  @media only screen and (min-width: $sm) {
+    display: none;
   }
 }
 .md-hide {
   display: none;
-  @media only screen and (min-width: 993px) {
+  @media only screen and (min-width: $md) {
     display: inherit;
   }
 }
 .md-show {
+  display: inherit;
+  @media only screen and (min-width: $md) {
+    display: none;
+  }
+}
+.lg-hide {
   display: none;
-  @media only screen and (max-width: 992px) {
+  @media only screen and (min-width: $lg) {
     display: inherit;
+  }
+}
+.lg-show {
+  display: inherit;
+  @media only screen and (min-width: $lg) {
+    display: none;
+  }
+}
+
+.normalize-padding {
+  @media only screen and (max-width: calc($lg - 1px)) {
+    padding: 0 var(--global-section-padding);
   }
 }

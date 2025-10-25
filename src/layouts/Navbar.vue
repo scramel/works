@@ -2,7 +2,7 @@
   <nav>
     <a href="#" class="f-row">
       <img src="@/assets/images/logo.webp" alt="Logo" class="black-box" />
-      <h5 class="md-hide">
+      <h5 class="lg-hide">
         scramel works<br />
         music production
       </h5>
