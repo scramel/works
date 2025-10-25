@@ -1,7 +1,7 @@
 <template>
   <nav>
     <a href="#" class="f-row">
-      <img src="@/assets/images/logo.webp" alt="Logo" class="black-box" />
+      <img src="/images/logo.webp" alt="Logo" class="black-box" />
       <h5 class="lg-hide">
         scramel works<br />
         music production

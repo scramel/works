@@ -5,5 +5,5 @@ Array.prototype.sample = function () {
 
 // static asset url
 export const require = (url) => {
-  return new URL('/src/assets/' + url, import.meta.url)
+  return new URL('' + url, import.meta.url)
 }

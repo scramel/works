@@ -25,14 +25,14 @@ const tracklist = [
 const currentTrack = ref(0)
 
 // carousel loop
-const delay = 50250 // miliseconds
+const delay = 5250 // miliseconds
 const timer = setInterval(() => {
   currentTrack.value++
   if (currentTrack.value == tracklist.length) currentTrack.value = 0
 }, delay)
 
 // image sources
-const srcs = tracklist.map((el) => require(`images/backgrounds/${el.title}.webp`))
+const srcs = tracklist.map((el) => `images/backgrounds/${el.title}.webp`)
 </script>
 
 <style lang="scss" scoped>

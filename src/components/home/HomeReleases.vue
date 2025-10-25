@@ -5,7 +5,7 @@
       <article class="f-row">
         <img
           class="cover-art normalize-padding"
-          :src="require(`images/covers/${tracks[currentTrack].title}.webp`)"
+          :src="`images/covers/${tracks[currentTrack].title}.webp`"
           :alt="`${tracks[currentTrack].title} cover art`"
         />
         <aside class="f-col details normalize-padding">
@@ -25,7 +25,7 @@
                 class="platform-icon"
                 target="_blank"
               >
-                <img :src="require(`images/logos/${platform.name}.webp`)" :alt="platform.name" />
+                <img :src="`images/logos/${platform.name}.webp`" :alt="platform.name" />
               </a>
             </div>
           </div>
