@@ -1,18 +1,20 @@
 <template>
-  <TransitionGroup name="slide-fade-next" tag="article">
-    <template v-for="(track, index) in tracks" :key="track.title">
-      <div v-if="currentTrack == index">
-        <h1>{{ track.tag }}</h1>
+  <Transition :name="`slide-fade-${slideDirection ? 'next' : 'prev'}`" mode="out-in" tag="article">
+    <article :key="currentTrack">
+      <h1 class="track-tag">{{ tracks[currentTrack].tag }}</h1>
+      <div class="f-row">
         <img
-          :src="require(`images/covers/${track.title}.webp`)"
-          :alt="`${track.title} cover art`"
+          :src="require(`images/covers/${tracks[currentTrack].title}.webp`)"
+          :alt="`${tracks[currentTrack].title} cover art`"
         />
+        <h1>{{ tracks[currentTrack].title }}</h1>
       </div>
-    </template>
-  </TransitionGroup>
+    </article>
+  </Transition>
 </template>
 
 <script setup>
+import { watch } from 'vue'
 import { require } from '@/assets/js/utils.js'
 
 const props = defineProps({
@@ -25,28 +27,48 @@ const props = defineProps({
     default: 0,
   },
 })
+
+// this manages whether the slide transition should go left or right
+// true = right
+// false = left
+let slideDirection = true
+watch(
+  () => props.currentTrack,
+  (n, o) => {
+    slideDirection = n > o
+  },
+)
 </script>
 
 <style lang="scss" scoped>
 article {
   display: flex;
+  flex-direction: column;
   position: absolute;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  h1 {
-    background-color: black;
-  }
-  div {
+  .track-tag {
     position: absolute;
-    overflow: hidden;
-    img {
-      max-width: 100vw;
-      max-height: 70vh;
-      padding: 1.5rem; // --global-section-padding mobile
+    top: var(--global-section-padding);
+    text-align: center;
+    width: fit-content;
+    background-color: black;
+    padding: 0 60px;
+    height: var(--global-heading-height);
+    line-height: var(--global-heading-height);
+    text-transform: uppercase;
+    transition: var(--global-transition);
+    @media only screen and (max-width: 768px) {
+      padding: 0 20px;
     }
+  }
+  img {
+    max-width: 100vw;
+    max-height: 70vh;
+    padding: var(--global-section-padding--mobile);
   }
 }
 </style>

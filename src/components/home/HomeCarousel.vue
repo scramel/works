@@ -4,7 +4,7 @@
       v-for="(src, index) in srcs"
       :src="src"
       alt="Release illustration"
-      :style="{ objectPosition: calcImgPosition(index) + '%' }"
+      :style="{ objectPosition: 50 + 50 * Math.sign(index - currentTrack) + '%' }"
     />
   </div>
 </template>
@@ -21,23 +21,6 @@ const props = defineProps({
     type: Array,
     required: true,
   },
-})
-
-// dinamically changes the object-position property value of an object-fit: cover img
-// this creates a parallax effect in screens with more height than width
-const calcImgPosition = computed(() => {
-  return (current) => {
-    switch (true) {
-      case current < props.currentTrack:
-        return 0
-      case current == props.currentTrack:
-        return 50
-      case current > props.currentTrack:
-        return 100
-      default:
-        return 50
-    }
-  }
 })
 </script>
 

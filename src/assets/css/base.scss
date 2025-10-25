@@ -24,19 +24,28 @@
   // transition durations
   --global-transition: 0.2s;
   --global-transition-fast: 0.15s;
-  --global-transition-carousel: 0.8s;
+  --global-transition-carousel: 1s;
 
   // general purpose UI settings
   --global-heading-height: 80px;
   --global-section-padding: 3rem;
+  --global-section-padding--mobile: 1.5rem;
 
   // z-indexes
   --global-ui-zindex: 1;
   --global-content-zindex: 0;
   --global-background-zindex: -1;
 
+  // font sizes
+  --global-h1-fontsize: 60px;
+  --global-h2-fontsize: 48px;
+  --global-h3-fontsize: 36px;
+  --global-h4-fontsize: 30px;
+  --global-h5-fontsize: 24px;
+  --global-h6-fontsize: 21px;
+
   @media only screen and (max-width: 768px) {
-    --global-section-padding: 1.5rem;
+    --global-section-padding: var(--global-section-padding--mobile);
   }
 }
 
@@ -74,6 +83,7 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    BubblerOne,
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -86,7 +96,8 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.3;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -99,12 +110,54 @@ body {
   flex-direction: column;
 }
 
+// semantic tags
 header,
 section {
   min-height: 100vh;
   min-width: 100vw;
 }
 
+// buttons
 button {
   cursor: pointer;
+}
+
+// font sizes
+h1 {
+  font-size: var(--global-h1-fontsize);
+}
+h2 {
+  font-size: var(--global-h2-fontsize);
+}
+h3 {
+  font-size: var(--global-h3-fontsize);
+}
+h4 {
+  font-size: var(--global-h4-fontsize);
+}
+h5 {
+  font-size: var(--global-h5-fontsize);
+}
+h6 {
+  font-size: var(--global-h6-fontsize);
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: calc(var(--global-h1-fontsize) / 1.5);
+  }
+  h2 {
+    font-size: calc(var(--global-h2-fontsize) / 1.5);
+  }
+  h3 {
+    font-size: calc(var(--global-h3-fontsize) / 1.5);
+  }
+  h4 {
+    font-size: calc(var(--global-h4-fontsize) / 1.5);
+  }
+  h5 {
+    font-size: calc(var(--global-h5-fontsize) / 1.5);
+  }
+  h6 {
+    font-size: calc(var(--global-h6-fontsize) / 1.5);
+  }
 }
