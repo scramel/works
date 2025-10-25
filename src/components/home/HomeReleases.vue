@@ -38,8 +38,6 @@
 </template>
 
 <script setup>
-import { watch } from 'vue'
-
 const props = defineProps({
   tracks: {
     type: Array,
@@ -49,18 +47,11 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
-})
-
-// this manages whether the slide transition should go left or right
-// true = right
-// false = left
-let slideDirection = true
-watch(
-  () => props.currentTrack,
-  (n, o) => {
-    slideDirection = n > o
+  slideDirection: {
+    type: Boolean,
+    default: true,
   },
-)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -92,6 +83,9 @@ watch(
       background-color: black;
       text-transform: uppercase;
       z-index: var(--global-ui-zindex);
+      @media only screen and (max-width: 1200px) {
+        padding: 0 20px !important;
+      }
     }
     &--title {
       padding: 0 40px;
@@ -102,6 +96,7 @@ watch(
     }
     @media only screen and (max-width: 1200px) {
       padding: 0 40px;
+      text-align: center;
     }
   }
   .cover-art {

@@ -1,13 +1,12 @@
 <template>
   <header>
-    <Carousel :currentTrack="currentTrack" :srcs="srcs" />
-    <Releases :currentTrack="currentTrack" :tracks="tracklist" />
+    <Carousel :currentTrack="currentTrack" :slideDirection="slideDirection" :srcs="srcs" />
+    <Releases :currentTrack="currentTrack" :slideDirection="slideDirection" :tracks="tracklist" />
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { require } from '@/assets/js/utils.js'
+import { ref, watch } from 'vue'
 import releases from './releases.js'
 
 // components
@@ -25,7 +24,7 @@ const tracklist = [
 const currentTrack = ref(0)
 
 // carousel loop
-const delay = 5250 // miliseconds
+const delay = 50250 // miliseconds
 const timer = setInterval(() => {
   currentTrack.value++
   if (currentTrack.value == tracklist.length) currentTrack.value = 0
@@ -33,6 +32,14 @@ const timer = setInterval(() => {
 
 // image sources
 const srcs = tracklist.map((el) => `images/backgrounds/${el.title}.webp`)
+
+// this manages whether the slide transition should go left or right
+// true = right
+// false = left
+let slideDirection = true
+watch(currentTrack, (n, o) => {
+  slideDirection = n > o
+})
 </script>
 
 <style lang="scss" scoped>

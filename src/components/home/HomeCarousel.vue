@@ -1,11 +1,9 @@
 <template>
   <div class="home__carousel">
-    <img
-      v-for="(src, index) in srcs"
-      :src="src"
-      alt="Release illustration"
-      :style="{ objectPosition: 50 + 50 * Math.sign(index - currentTrack) + '%' }"
-    />
+    <Transition :name="`slide-${slideDirection ? 'next' : 'prev'}`">
+      <img :src="srcs[currentTrack]" alt="Release illustration" :key="currentTrack" />
+      <!-- :style="{ objectPosition: 50 + 50 * Math.sign(index - currentTrack) + '%' }" -->
+    </Transition>
   </div>
 </template>
 
@@ -18,6 +16,10 @@ const props = defineProps({
   srcs: {
     type: Array,
     required: true,
+  },
+  slideDirection: {
+    type: Boolean,
+    default: true,
   },
 })
 </script>
@@ -33,13 +35,10 @@ const props = defineProps({
   overflow: hidden;
   filter: brightness(0.5);
   img {
+    position: absolute;
     height: 100%;
-    min-width: 100vw;
+    width: 100vw;
     object-fit: cover;
-    transform: translate(v-bind("-(currentTrack * 100) + '%'"));
-    transition:
-      transform var(--global-transition-carousel) ease,
-      object-position var(--global-transition-carousel) ease;
   }
 }
 </style>

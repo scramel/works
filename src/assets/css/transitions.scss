@@ -1,6 +1,6 @@
-// slide
+// slide fade
 
-@keyframes slide-in-next {
+@keyframes slide-fade-in-next {
   0% {
     transform: translateX(250px);
     opacity: 0;
@@ -10,7 +10,7 @@
     opacity: 1;
   }
 }
-@keyframes slide-out-next {
+@keyframes slide-fade-out-next {
   0% {
     transform: translateX(0);
     opacity: 1;
@@ -20,7 +20,7 @@
     opacity: 0;
   }
 }
-@keyframes slide-in-prev {
+@keyframes slide-fade-in-prev {
   0% {
     transform: translateX(-250px);
     opacity: 0;
@@ -30,7 +30,7 @@
     opacity: 1;
   }
 }
-@keyframes slide-out-prev {
+@keyframes slide-fade-out-prev {
   0% {
     transform: translateX(0);
     opacity: 1;
@@ -48,10 +48,10 @@
     transition: all calc(var(--global-transition-carousel) / 2) ease-in;
   }
   &-enter-active {
-    animation: slide-in-next calc(var(--global-transition-carousel) / 2) forwards ease-out;
+    animation: slide-fade-in-next calc(var(--global-transition-carousel) / 2) forwards ease-out;
   }
   &-leave-active {
-    animation: slide-out-next calc(var(--global-transition-carousel) / 2) forwards ease-in;
+    animation: slide-fade-out-next calc(var(--global-transition-carousel) / 2) forwards ease-in;
   }
 }
 
@@ -62,9 +62,80 @@
     transition: all calc(var(--global-transition-carousel) / 2) ease;
   }
   &-enter-active {
-    animation: slide-in-prev calc(var(--global-transition-carousel) / 2) forwards ease-out;
+    animation: slide-fade-in-prev calc(var(--global-transition-carousel) / 2) forwards ease-out;
   }
   &-leave-active {
-    animation: slide-out-prev calc(var(--global-transition-carousel) / 2) forwards ease-in;
+    animation: slide-fade-out-prev calc(var(--global-transition-carousel) / 2) forwards ease-in;
+  }
+}
+
+// slide with object-fit: cover movement
+
+@keyframes slide-in-next {
+  0% {
+    transform: translateX(100vw);
+    object-position: 25%;
+  }
+  100% {
+    transform: translateX(0);
+    object-position: 50%;
+  }
+}
+@keyframes slide-out-next {
+  0% {
+    transform: translateX(0);
+    object-position: 50%;
+  }
+  100% {
+    transform: translateX(-100vw);
+    object-position: 75%;
+  }
+}
+@keyframes slide-in-prev {
+  0% {
+    transform: translateX(-100vw);
+    object-position: 75%;
+  }
+  100% {
+    transform: translateX(0);
+    object-position: 50%;
+  }
+}
+@keyframes slide-out-prev {
+  0% {
+    transform: translateX(0);
+    object-position: 50%;
+  }
+  100% {
+    transform: translateX(100vw);
+    object-position: 25%;
+  }
+}
+
+.slide-next {
+  /* apply transition to moving elements */
+  &-enter-active,
+  &-leave-active {
+    transition: all var(--global-transition-carousel) ease;
+  }
+  &-enter-active {
+    animation: slide-in-next var(--global-transition-carousel) forwards ease-out;
+  }
+  &-leave-active {
+    animation: slide-out-next var(--global-transition-carousel) forwards ease-out;
+  }
+}
+
+.slide-prev {
+  /* apply transition to moving elements */
+  &-enter-active,
+  &-leave-active {
+    transition: all var(--global-transition-carousel) ease;
+  }
+  &-enter-active {
+    animation: slide-in-prev var(--global-transition-carousel) forwards ease-out;
+  }
+  &-leave-active {
+    animation: slide-out-prev var(--global-transition-carousel) forwards ease-out;
   }
 }
