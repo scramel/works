@@ -39,7 +39,6 @@
 
 <script setup>
 import { watch } from 'vue'
-import { require } from '@/assets/js/utils.js'
 
 const props = defineProps({
   tracks: {
@@ -78,7 +77,6 @@ watch(
     flex: 1;
     gap: 0;
     aside {
-      min-width: 42vw;
       padding-right: var(--global-section-padding);
     }
   }
