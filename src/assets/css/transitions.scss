@@ -112,7 +112,7 @@
   }
 }
 
-$ease-out: cubic-bezier(0, 0, 0.5, 1);
+$ease-out: cubic-bezier(0, 0, 0.4, 1);
 .slide-next {
   /* apply transition to moving elements */
   &-enter-active,

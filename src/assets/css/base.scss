@@ -166,13 +166,13 @@ h6 {
 }
 @media only screen and (max-width: 768px) {
   h1 {
-    font-size: calc(var(--global-h1-fontsize) / 1.5);
+    font-size: min(10vw, calc(var(--global-h1-fontsize) / 1.5));
   }
   h2 {
-    font-size: calc(var(--global-h2-fontsize) / 1.5);
+    font-size: min(8vw, calc(var(--global-h2-fontsize) / 1.5));
   }
   h3 {
-    font-size: calc(var(--global-h3-fontsize) / 1.5);
+    font-size: min(6vw, calc(var(--global-h3-fontsize) / 1.5));
   }
   h4 {
     font-size: calc(var(--global-h4-fontsize) / 1.5);

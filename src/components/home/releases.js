@@ -26,7 +26,7 @@ const releases = {
     },
     {
       title: 'Bibliophilia',
-      artist: 'Scramel x KodamaSounds',
+      artist: 'Scramel',
       subtitle: '(ZUN - The Grimoire of Alice DnB Remix)',
       url: 'https://www.youtube.com/watch?v=zx1bElvF6UU',
       platforms: [
@@ -133,7 +133,7 @@ const releases = {
     {
       title: '牢獄STRIP',
       artist: '-45',
-      subtitle: '(Scramel Fusion Jazz Remix)',
+      subtitle: '(Scramel Jazzy Remix)',
       url: 'https://www.youtube.com/watch?v=tfbSUKRO5cQ',
       platforms: [
         {

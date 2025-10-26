@@ -1,4 +1,20 @@
 <template>
+  <!-- images preload -->
+  <head>
+    <link
+      v-for="track in tracks"
+      rel="preload"
+      as="image"
+      :href="`images/covers/${track.title}.webp`"
+    />
+    <link
+      v-for="track in tracks"
+      rel="preload"
+      as="image"
+      :href="`images/backgrounds/${track.title}.webp`"
+    />
+  </head>
+  <!-- releases info -->
   <Transition :name="`slide-fade-${slideDirection ? 'next' : 'prev'}`" mode="out-in">
     <div class="home__releases" :key="currentTrack">
       <h1 class="text text--tag">{{ tracks[currentTrack].tag }}</h1>
@@ -33,7 +49,7 @@
           </div>
         </aside>
       </article>
-      <div :style="{ height: 'var(--global-heading-height)' }"></div>
+      <!-- <div :style="{ height: 'var(--global-heading-height)' }"></div> -->
     </div>
   </Transition>
 </template>
@@ -66,6 +82,7 @@ const props = defineProps({
   overflow: hidden;
   padding: var(--global-section-padding);
   article {
+    min-height: 680px;
     flex: 1;
     gap: 0;
     aside {
@@ -86,7 +103,6 @@ const props = defineProps({
       text-align: center;
       background-color: black;
       text-transform: uppercase;
-      z-index: var(--global-ui-zindex);
       @media only screen and (max-width: 1200px) {
         padding: 0 20px !important;
       }
