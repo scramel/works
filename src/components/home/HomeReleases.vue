@@ -12,26 +12,27 @@
           <h1 class="text text--title">{{ tracks[currentTrack].title }}</h1>
           <h2 class="text">{{ tracks[currentTrack].artist }}</h2>
           <h3 class="text">{{ tracks[currentTrack].subtitle }}</h3>
-          <div class="mt-1-5 f-row">
-            <a :href="tracks[currentTrack].url" target="_blank">
-              <button class="button button--secondary">
-                <h3>▶ Listen</h3>
-              </button>
-            </a>
-            <div class="f-row f-row--wrap">
-              <a
-                v-for="platform in tracks[currentTrack].platforms"
-                :href="platform.url"
-                class="platform-icon"
-                target="_blank"
-              >
-                <img :src="`images/logos/${platform.name}.webp`" :alt="platform.name" />
+          <div>
+            <div class="mt-1-5 f-row">
+              <a :href="tracks[currentTrack].url" target="_blank">
+                <button class="button button--secondary">
+                  <h3>▶ Listen</h3>
+                </button>
               </a>
+              <div class="f-row f-row--wrap">
+                <a
+                  v-for="platform in tracks[currentTrack].platforms"
+                  :href="platform.url"
+                  class="platform-icon"
+                  target="_blank"
+                >
+                  <img :src="`images/logos/${platform.name}.webp`" :alt="platform.name" />
+                </a>
+              </div>
             </div>
           </div>
         </aside>
       </article>
-      <!-- <div></div> -->
       <div :style="{ height: 'var(--global-heading-height)' }"></div>
     </div>
   </Transition>
@@ -68,7 +69,10 @@ const props = defineProps({
     flex: 1;
     gap: 0;
     aside {
-      padding-right: var(--global-section-padding);
+      padding-right: calc(var(--global-section-padding) + 2rem);
+      @media only screen and (max-width: 768px) {
+        padding: 0 var(--global-section-padding);
+      }
     }
   }
   .text {

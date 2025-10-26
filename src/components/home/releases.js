@@ -25,9 +25,37 @@ const releases = {
       },
     },
     {
+      title: 'Bibliophilia',
+      artist: 'Scramel x KodamaSounds',
+      subtitle: '(ZUN - The Grimoire of Alice DnB Remix)',
+      url: 'https://www.youtube.com/watch?v=zx1bElvF6UU',
+      platforms: [
+        {
+          name: 'Website',
+          url: 'https://kodamasoft.net/releases/gensokyo-party-vol5',
+        },
+        {
+          name: 'YouTube',
+          url: 'https://www.youtube.com/watch?v=zx1bElvF6UU',
+        },
+        {
+          name: 'Bandcamp',
+          url: 'https://kodamasounds.bandcamp.com/album/gensokyo-party-vol-5-vantablack-2',
+        },
+        {
+          name: 'BOOTH',
+          url: 'https://kodamasoft.booth.pm/items/5667642',
+        },
+      ],
+      illustration: {
+        artist: 'Natsumi Kei',
+        url: 'https://twitter.com/sirius1810405',
+      },
+    },
+    {
       title: 'the executioner',
       artist: 'zts',
-      subtitle: '(Metal Remix)',
+      subtitle: '(Scramel Metal Remix)',
       url: 'https://www.youtube.com/watch?v=2y4ETS9WIfw',
       platforms: [
         {
@@ -53,7 +81,7 @@ const releases = {
     {
       title: 'goldenslaughterer',
       artist: 'zts',
-      subtitle: '(Electro Swing Remix)',
+      subtitle: '(Scramel Electro Swing Remix)',
       url: 'https://www.youtube.com/watch?v=uK0ZV_PyFeU',
       platforms: [
         {
@@ -81,7 +109,7 @@ const releases = {
     {
       title: 'BIG SHOT',
       artist: 'Toby Fox',
-      subtitle: '(Dance Remix)',
+      subtitle: '(Scramel Dance Remix)',
       url: 'https://www.youtube.com/watch?v=GLUYD4NcC4k',
       platforms: [
         {
@@ -105,7 +133,7 @@ const releases = {
     {
       title: '牢獄STRIP',
       artist: '-45',
-      subtitle: '(Fusion Jazz Remix)',
+      subtitle: '(Scramel Fusion Jazz Remix)',
       url: 'https://www.youtube.com/watch?v=tfbSUKRO5cQ',
       platforms: [
         {
@@ -135,7 +163,7 @@ const releases = {
     {
       title: 'hope',
       artist: 'dai',
-      subtitle: '(Neoclassic Trance Remix)',
+      subtitle: '(Scramel Neoclassic Trance Remix)',
       url: 'https://www.youtube.com/watch?v=cKAFFarrosM',
       platforms: [
         {
@@ -195,7 +223,7 @@ const releases = {
     {
       title: 'Girl Next Door',
       artist: 'Toby Fox',
-      subtitle: '(Lo-fi Remix)',
+      subtitle: '(Scramel Lo-fi Remix)',
       url: 'https://www.youtube.com/watch?v=ausxySLlim8',
       platforms: [
         {

@@ -112,17 +112,18 @@
   }
 }
 
+$ease-out: cubic-bezier(0, 0, 0.5, 1);
 .slide-next {
   /* apply transition to moving elements */
   &-enter-active,
   &-leave-active {
-    transition: all var(--global-transition-carousel) ease;
+    transition: all var(--global-transition-carousel) $ease-out;
   }
   &-enter-active {
-    animation: slide-in-next var(--global-transition-carousel) forwards ease-out;
+    animation: slide-in-next var(--global-transition-carousel) forwards $ease-out;
   }
   &-leave-active {
-    animation: slide-out-next var(--global-transition-carousel) forwards ease-out;
+    animation: slide-out-next var(--global-transition-carousel) forwards $ease-out;
   }
 }
 
@@ -130,12 +131,12 @@
   /* apply transition to moving elements */
   &-enter-active,
   &-leave-active {
-    transition: all var(--global-transition-carousel) ease;
+    transition: all var(--global-transition-carousel) $ease-out;
   }
   &-enter-active {
-    animation: slide-in-prev var(--global-transition-carousel) forwards ease-out;
+    animation: slide-in-prev var(--global-transition-carousel) forwards $ease-out;
   }
   &-leave-active {
-    animation: slide-out-prev var(--global-transition-carousel) forwards ease-out;
+    animation: slide-out-prev var(--global-transition-carousel) forwards $ease-out;
   }
 }
